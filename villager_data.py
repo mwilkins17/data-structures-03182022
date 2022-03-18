@@ -15,11 +15,13 @@
 #     #return a set() with the name of the species, which is the 
 #     #second index [1] in each line of the file
 #     # species = {specie for specie in file file.split("|")[1]}
-#     species = set()
-#     # file = file.split("|")
-#     for line in file:
-#         line = line.split("|")
-#         species.add(line[1])
+#     species = {line.split("|")[1] for line in file}
+
+#     # species = set()
+#     # # file = file.split("|")
+#     # for line in file:
+#     #     line = line.split("|")
+#     #     species.add(line[1])
         
 #     file.close()
 #     # TODO: replace this with your code
@@ -101,32 +103,34 @@
 #     return [education, fitness, nature, music, fashion, play]
 
 
-def all_data(filename):
-    """Return all the data in a file.
+# def all_data(filename):
+# #     """Return all the data in a file.
 
-    Each line in the file is a tuple of (name, species, personality, hobby,
-    saying).
+# #     Each line in the file is a tuple of (name, species, personality, hobby,
+# #     saying).
 
-    Arguments:
-        - filename (str): the path to a data file
+# #     Arguments:
+# #         - filename (str): the path to a data file
 
-    Return:
-        - list[tuple[str]]: a list of tuples containing strings
-    """
-    #open file, loop through each line and split by "|"
-    #make the strings at indices [0:4] into tuples and
-    #then add them to an empty list and then close the file
-    file = open(filename)
-    all_data = []
+# #     Return:
+# #         - list[tuple[str]]: a list of tuples containing strings
+# #     """
+# #     #open file, loop through each line and split by "|"
+# #     #make the strings at indices [0:4] into tuples and
+# #     #then add them to an empty list and then close the file
+#     file = open(filename)
+#     all_data = [tuple(line.rstrip().split("|")[0:5]) for line in file]
 
-    for line in file:
-        line = line.rstrip()
-        line = line.split("|")
-        # a_tuple = (line[0:5])
-        line = tuple(line)
-        all_data.append(line)
-        file.close()
-    return print(all_data)
+# #     for line in file:
+# #         line = line.rstrip()
+# #         line = line.split("|")
+# #         # a_tuple = (line[0:5])
+# #         line = tuple(line)
+# #         all_data.append(line)
+#     file.close()
+#     return print(all_data)
+
+# all_data("villagers.csv")
 
 
 # def find_motto(filename, villager_name):
